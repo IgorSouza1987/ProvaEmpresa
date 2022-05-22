@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace EmpresaData.Contracts
 {
-   public interface IClienteRpository
+   public interface IClienteRepository
     {
         void Inserir(Cliente cliente);
         void Atualizar(Cliente cliente);
@@ -15,5 +15,8 @@ namespace EmpresaData.Contracts
 
         List<Cliente> ConsultarTodos();
         Cliente ConsultarPorId(int IdCliente);
+
+        Cliente ConsultarPorCpf(string Cpf);
+
     }
 }

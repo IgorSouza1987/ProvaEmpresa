@@ -1,0 +1,61 @@
+﻿@model IEnumerable<EmpresaWeb.Models.ImovelModel>
+
+    <h4>Imóveis</h4>
+<p>
+    <a asp-action="Create">Criar novo Registro</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdImovel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tipo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Valor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descricao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ativo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdImovel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tipo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Valor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ativo)
+            </td>
+            <td>
+                <a href="/Imovel/Delete/@item.IdImovel"
+                   onclick="return confirmarExclusao();"
+                   class="btn btn-danger btn-sm">
+                    Excluir
+                </a>
+                <a href="/Imovel/Edit/@item.IdImovel"
+                   class="btn btn-primary btn-sm">
+                    Atualizar
+                </a>
+              
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

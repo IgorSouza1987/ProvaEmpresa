@@ -14,6 +14,5 @@ namespace EmpresaData.Entities
         public string Descricao { get; set; }
         public bool Ativo { get; set; }
 
-        public Cliente cliente { get; set; }
     }
 }

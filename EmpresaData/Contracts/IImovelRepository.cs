@@ -8,7 +8,7 @@ using EmpresaData.Entities;
 
 namespace EmpresaData.Contracts
 {
-   public interface IImovelRpository
+   public interface IImovelRepository 
     {
         void Inserir(Imovel imovel);
         void Atualizar(Imovel imovel);

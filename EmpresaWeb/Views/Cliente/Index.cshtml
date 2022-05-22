@@ -1,0 +1,62 @@
+﻿@model IEnumerable<EmpresaWeb.Models.ClienteModel>
+
+    <h4>Clientes</h4>
+<p>
+    <a asp-action="Create">Criar novo Registro</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdCliente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeCliente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cpf)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ativo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdCliente)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NomeCliente)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cpf)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ativo)
+                </td>
+                <td>
+                    <a href="/Cliente/Delete/@item.IdCliente"
+                       onclick="return confirmarExclusao();"
+                       class="btn btn-danger btn-sm">
+                        Excluir
+                    </a>
+                    <a href="/Cliente/Edit/@item.IdCliente"
+                       class="btn btn-primary btn-sm">
+                        Atualizar
+                    </a>
+                   
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
